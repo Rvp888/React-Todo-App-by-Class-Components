@@ -24,7 +24,7 @@ export default class TodoApp extends React.Component {
 
     addTask = (task) => {
         this.setState({
-            tasks:[...this.state?.tasks, task]
+            tasks:[...this?.state?.tasks, task]
         })
     }
 
