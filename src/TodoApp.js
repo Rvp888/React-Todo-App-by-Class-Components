@@ -24,13 +24,13 @@ export default class TodoApp extends React.Component {
 
     addTask = (task) => {
         this.setState({
-            tasks:[...this.state.tasks,task]
+            tasks:[...this.state?.tasks,task]
         })
     }
 
     pendingTasks = () => {
         let pendingCount = 0;
-        this.state.tasks.forEach((task) => {
+        this.state?.tasks?.forEach((task) => {
             if(!task.completed){
                 pendingCount += 1;
             }
@@ -39,7 +39,7 @@ export default class TodoApp extends React.Component {
     }
 
     updateTask = (index) => {
-        let newTasks = [...this.state.tasks];
+        let newTasks = [...this.state?.tasks];
         newTasks[index].completed = true;
         this.setState({
             tasks: newTasks
@@ -47,7 +47,7 @@ export default class TodoApp extends React.Component {
     }
 
     removeTask = (index) => {
-        let newTasks = [...this.state.tasks];
+        let newTasks = [...this.state?.tasks];
         newTasks.splice(index, 1);
         this.setState({
             tasks: newTasks
@@ -55,7 +55,7 @@ export default class TodoApp extends React.Component {
     }
 
     componentDidUpdate() {
-        localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
+        localStorage.setItem("tasks", JSON.stringify(this.state?.tasks));
     }
 
     render() {
@@ -72,7 +72,7 @@ export default class TodoApp extends React.Component {
                         <p id="pending-tasks">Pending tasks: {this.pendingTasks()}</p>
                     </div>
                     <div className="task-div">
-                        {this.state.tasks.map((task, index) => <Task {...task} key={index} index={index} updateTask={this.updateTask} removeTask={this.removeTask}/>)}
+                        {this.state?.tasks?.map((task, index) => <Task {...task} key={index} index={index} updateTask={this.updateTask} removeTask={this.removeTask}/>)}
                     </div>
                 </div>
             </div>
