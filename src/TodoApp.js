@@ -24,14 +24,14 @@ export default class TodoApp extends React.Component {
 
     addTask = (task) => {
         this.setState({
-            tasks:[...this.state?.tasks,task]
+            tasks:[...this.state?.tasks, task]
         })
     }
 
     pendingTasks = () => {
         let pendingCount = 0;
         this.state?.tasks?.forEach((task) => {
-            if(!task.completed){
+            if(!task?.completed){
                 pendingCount += 1;
             }
         });
@@ -40,7 +40,7 @@ export default class TodoApp extends React.Component {
 
     updateTask = (index) => {
         let newTasks = [...this.state?.tasks];
-        newTasks[index].completed = true;
+        newTasks[index]?.completed = true;
         this.setState({
             tasks: newTasks
         })
@@ -48,7 +48,7 @@ export default class TodoApp extends React.Component {
 
     removeTask = (index) => {
         let newTasks = [...this.state?.tasks];
-        newTasks.splice(index, 1);
+        newTasks?.splice(index, 1);
         this.setState({
             tasks: newTasks
         })

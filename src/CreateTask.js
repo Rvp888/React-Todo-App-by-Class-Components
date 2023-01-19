@@ -12,7 +12,7 @@ export default class CreateTask extends React.Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
+        e?.preventDefault();
         this.props?.addTask({
             title: this.state?.value,
             completed: false
