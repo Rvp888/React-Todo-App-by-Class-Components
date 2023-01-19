@@ -40,7 +40,7 @@ export default class TodoApp extends React.Component {
 
     updateTask = (index) => {
         let newTasks = [...this.state?.tasks];
-        newTasks[index]?.completed = true;
+        newTasks[index].completed = true;
         this.setState({
             tasks: newTasks
         })
