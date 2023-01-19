@@ -13,8 +13,8 @@ export default class CreateTask extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addTask({
-            title: this.state.value,
+        this.props?.addTask({
+            title: this.state?.value,
             completed: false
         });
         this.setState({
@@ -25,7 +25,7 @@ export default class CreateTask extends React.Component {
     render() {
         return (
             <form id="task-form" onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} id="task-input" placeholder="Add a Todo" onChange={(e) => this.setState({value:e.target.value})}/>
+                <input type="text" value={this.state?.value} id="task-input" placeholder="Add a Todo" onChange={(e) => this.setState({value:e?.target?.value})}/>
                 <input type="submit" value="Add" id="submit-btn"/>
             </form>
         )
