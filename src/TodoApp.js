@@ -68,7 +68,7 @@ export default class TodoApp extends React.Component {
                 <div className="todo-list">
                     <h2 id="todo-list-title">Todo-Tasks</h2>
                     <div className="task-count">
-                        <p id="total-tasks">Total tasks: {this.state.tasks.length}</p>
+                        <p id="total-tasks">Total tasks: {this.state?.tasks?.length}</p>
                         <p id="pending-tasks">Pending tasks: {this.pendingTasks()}</p>
                     </div>
                     <div className="task-div">
